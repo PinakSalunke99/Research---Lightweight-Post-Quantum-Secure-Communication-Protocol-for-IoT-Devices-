@@ -1,0 +1,20 @@
+Based on your current benchmark results, SHA-256 was the most efficient overall among the six hashes we tested.
+
+At the important 32-byte input size:
+
+Hash   	       Auth time ↓	 Hash-only ↓	   Throughput ↑
+SHA-256      	 6.56 µs	     1.65 µs	       152,428 auth/s
+SHA-512 	     8.14 µs	     2.51 µs	       122,924 auth/s
+BLAKE2s-256	   8.84 µs	     2.51 µs	       113,098 auth/s
+BLAKE2b-512	   8.84 µs	     2.51 µs	       113,098 auth/s
+SHA3-256	     9.28 µs	     3.17 µs	       107,727 auth/s
+SHA3-512	     9.82 µs	     3.17 µs	       101,823 auth/s
+
+So, according to our measured experiment:
+
+🥇 SHA-256 → most efficient
+🥈 SHA-512
+🥉 BLAKE2s/BLAKE2b
+SHA3-256 / SHA3-512 → higher measured latency
+
+The strongest evidence is that SHA-256 has both the lowest authentication time and highest authentication throughput in the 32-byte test.
